@@ -4,6 +4,9 @@ metadata:
   name: {{ .Chart.Name }}-config
 data:
   OPENAI_API_KEY: "{{ .Values.su_open_api_key }}"
+  OPENAI_API_BASE: "{{ .Values.su_open_api_base }}"
+  OPENAI_API_VERSION: "{{ .Values.su_open_api_version }}"
+  GPT_MODEL: "{{ .Values.su_gpt_model }}"
   LOG_LEVEL: "{{ .Values.su_log_level }}"
   BHASHINI_ENDPOINT_URL: "{{ .Values.su_bhasini_endpoint_url }}"
   BHASHINI_API_KEY: "{{ .Values.su_bhasini_api_key }}"
@@ -15,4 +18,3 @@ data:
   SERVICE_ENVIRONMENT: "{{ .Values.environment }}"
   TELEMETRY_ENDPOINT_URL: "{{ .Values.telemetry_url }}"
   TELEMETRY_LOG_ENABLED: "{{ .Values.telemetry_log_enabled }}"
-  

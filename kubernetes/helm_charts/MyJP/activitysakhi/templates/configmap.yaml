@@ -4,6 +4,9 @@ metadata:
   name: {{ .Chart.Name }}-config
 data:
   OPENAI_API_KEY: "{{ .Values.as_open_api_key }}"
+  OPENAI_API_BASE: "{{ .Values.as_open_api_base }}"
+  OPENAI_API_VERSION: "{{ .Values.as_open_api_version }}"
+  GPT_MODEL: "{{ .Values.as_gpt_model }}"
   LOG_LEVEL: "{{ .Values.as_log_level }}"
   BHASHINI_ENDPOINT_URL: "{{ .Values.as_bhasini_endpoint_url }}"
   BHASHINI_API_KEY: "{{ .Values.as_bhasini_api_key }}"

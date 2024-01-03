@@ -18,8 +18,10 @@ ss_oci_region_name: ""
 ss_oci_bucket_name: ""
 ss_oci_access_key: ""
 ss_oci_secret_key: ""
-
-
+ss_open_api_base: ""
+ss_open_api_version: ""
+ss_gpt_model: ""
+ss_marco_url: ""
 replicaCount: 1
 resources:
   requests:

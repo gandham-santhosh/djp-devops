@@ -6,11 +6,12 @@ telemetry_log_enabled: "true"
 namespace: ""
 imagepullsecrets: ""
 dockerhub: ""
-
+as_open_api_base: ""
+as_open_api_version: ""
+as_gpt_model: ""
 as_repository: "activity_sakhi_api_service"
 as_image_tag: "latest"
 as_log_level: INFO
-
 replicaCount: 1
 resources:
   requests:
@@ -22,9 +23,6 @@ resources:
 network:
   port: 8000
   targetport: 8000
-network_wrapper:
-  port: 7000
-  targetport: 7000
 strategy:
   type: RollingUpdate
   maxsurge: 25
