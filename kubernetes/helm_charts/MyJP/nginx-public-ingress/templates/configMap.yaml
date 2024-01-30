@@ -115,19 +115,10 @@ data:
 {{- end }}
 
     location /dashboard/ {
-        rewrite ^/(.*) /$1 break;
         proxy_pass http://static-website-service:8080/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Scheme $scheme;
-        proxy_connect_timeout 5;
-        proxy_send_timeout 60;
-        proxy_read_timeout 70;
-        proxy_set_header    X-Forwarded-Proto $scheme;
-        proxy_set_header Connection "";
-        proxy_http_version 1.1;
-        proxy_set_header X-Request-ID $sb_request_id;
-        
+         rewrite            ^(.*)$   "://$http_host$uri$is_args$args";
+         rewrite            ^(.*)$   "http$uri$is_args$args" break;
+        proxy_set_header   Host     $host;
       }
 
       location /api/ {
