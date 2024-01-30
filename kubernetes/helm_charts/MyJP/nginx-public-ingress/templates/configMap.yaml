@@ -114,8 +114,7 @@ data:
       }
 {{- end }}
 
-    location /dashboard {
-        rewrite /dashboard/(.*) /$1 break;
+    location /dashboard/ {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Scheme $scheme;
@@ -126,7 +125,7 @@ data:
         proxy_set_header Connection "";
         proxy_http_version 1.1;
         proxy_set_header X-Request-ID $sb_request_id;
-        proxy_pass http://static-website-service:8080;
+        proxy_pass http://static-website-service:8080/;
       }
 
       location /api/ {
